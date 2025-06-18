@@ -1,0 +1,60 @@
+.content1280 {
+  max-width: 1280px;
+  padding: 38px 32px 0px 200px;
+  width: calc(100% - 232px);
+}
+
+.reviewTag {
+  color: #e77832;
+  display: inline-block;
+  transform: rotate(90deg);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: fixed;
+  left: 0px;
+  top: 68px;
+  width: 150px;
+  height: 100px;
+  font-family: metropolis;
+}
+.twoGrid28 {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 17% 77%;
+  column-gap: 6%;
+  margin: 30px 0;
+  padding-top: 50px;
+}
+.reviewPostSideInfo div {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: noto_sans_jp;
+}
+.reviewPostTitle {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.23em;
+}
+.reviewPostContent {
+  margin-top: 40px;
+  font-family: noto_sans_jp;
+}
+.reviewPostContent p {
+  margin-bottom: 1.45rem;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: justify;
+  text-justify: distribute;
+  line-height: 23px;
+  /* letter-spacing: 0.23em; */
+}
+.reviewPostContent p img {
+  margin-bottom: 0px;
+}
+.reviewPostContent p iframe {
+  width: 100%;
+}

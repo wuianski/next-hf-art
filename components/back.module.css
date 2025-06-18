@@ -1,0 +1,29 @@
+.reviewPage {
+  padding: 38px 32px 0px 200px;
+  width: calc(100% - 232px);
+  position: fixed;
+  background-color: #fff;
+}
+.btmLine {
+  height: 30px;
+  border-bottom: 1px #e77832 solid;
+  width: 100%;
+}
+.backBtn {
+  cursor: pointer;
+  float: right;
+}
+.backBtn img {
+  margin-bottom: -3px;
+  height: 16px;
+}
+.backText {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  text-decoration: underline;
+  margin-left: 2px;
+
+  vertical-align: text-bottom;
+  font-family: metropolis;
+}

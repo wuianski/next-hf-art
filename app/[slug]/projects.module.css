@@ -1,0 +1,451 @@
+.fullpage_container {
+  position: relative;
+  top: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #000;
+  z-index: 2;
+}
+.projectTag {
+  color: #e77832;
+  display: inline-block;
+  transform: rotate(90deg);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0px;
+  top: 68px;
+  width: 150px;
+  height: 100px;
+  font-family: metropolis;
+  /* text-shadow: 0.03em 0.03em #e77832; */
+}
+.blcCtrTitle {
+  color: #ffffff;
+  width: 73vw;
+  position: absolute;
+  top: calc(50% - 120px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0.2em 0.2em 0.8em #000;
+}
+.fullPName_EN {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  margin: 16px 0;
+  line-height: initial;
+  font-family: metropolis;
+}
+.fullPName_TW {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin: 16px 0;
+  line-height: initial;
+  font-family: noto_sans_jp;
+}
+.txtCtr {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.blcCtrIntro {
+  color: #ffffff;
+  width: 850px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 210px;
+  text-shadow: 0.2em 0.2em 0.8em #000;
+}
+.pageIntroTW {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.06em;
+  text-align: justify;
+  text-justify: distribute;
+  font-family: noto_sans_jp;
+}
+.pageIntroEN {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  margin-top: 14px;
+  text-align: justify;
+  text-justify: distribute;
+  font-family: metropolis;
+}
+.pdTB60 {
+  padding: 60px 0px;
+}
+.arrowDown {
+  position: absolute;
+  top: 90%;
+  left: calc(50% + 10px);
+  transform: translate(-90%, -50%);
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 0.2em 0.2em 0.8em #000;
+}
+
+/* pList */
+.projectsList {
+  padding: 38px 32px 38px 200px;
+}
+.pList {
+  display: block;
+  background: #fafafa;
+  height: 230px;
+  width: calc(100dvw - 250px);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.pList_link {
+  line-height: 100%;
+}
+.pList_year {
+  color: #e77832;
+  width: 70px;
+  height: 100%;
+  display: inline-block;
+  transform: rotate(90deg);
+  vertical-align: middle;
+  text-align: center;
+  margin-left: -130px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  font-family: metropolis;
+}
+.pList_title {
+  width: 60%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding-left: 70px;
+  padding-right: 10px;
+}
+.pList_titleTW {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  line-height: 30px;
+  font-family: noto_sans_jp;
+}
+.pList_titleEN {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-family: metropolis;
+}
+.pList_titleEN_Q {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-family: metropolis;
+}
+.line {
+  display: none;
+}
+.pList_aName {
+  width: 27%;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.6;
+  vertical-align: middle;
+  border-left: 1px #e77832 solid;
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding-left: 55px;
+}
+.pList_aNameTW {
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-family: noto_sans_jp;
+}
+.pList_aNameEN {
+  text-align: center;
+  line-height: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: metropolis;
+}
+
+/* aList */
+.aList {
+  display: block;
+  height: 10vh;
+  border-top: 1px #e77832 solid;
+  padding-top: 10px;
+  margin-bottom: 13px;
+}
+.aList_link {
+  line-height: 100%;
+}
+.aList_yearBlk {
+  width: 8%;
+  display: inline-block;
+  vertical-align: top;
+}
+.aList_yearBlk_m {
+  display: none;
+}
+.aList_year {
+  color: #e77832;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.1rem;
+  font-family: metropolis;
+}
+.aList_title {
+  width: 60%;
+  display: inline-block;
+}
+.aList_titleTW {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  line-height: 30px;
+}
+.aList_titleEN {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  line-height: 20px;
+  text-transform: capitalize;
+  font-family: metropolis;
+}
+.aList_aName {
+  width: 28%;
+  display: inline-block;
+  line-height: 1.6;
+  vertical-align: top;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+.aList_aNameTW {
+  line-height: 30px;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  font-family: noto_sans_jp;
+}
+.aList_aNameEN {
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  font-family: metropolis;
+}
+.aList_linkBlk {
+  width: 2%;
+  display: inline-block;
+  cursor: pointer;
+}
+.hyperlinkBtnImg {
+  width: 16px;
+}
+
+/* Arrow Up */
+.arrowUp {
+  position: absolute;
+  left: calc(50% + 14px);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+/* Hong x Panasonic */
+.content_hongXPanasonic {
+  padding: 38px 32px 0px 200px;
+  text-align: justify;
+  text-justify: distribute;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  margin-bottom: 60px;
+}
+.aHInfo,
+.aCInfo {
+  padding: 0 27px 0 66px;
+}
+.projectTagFixed {
+  color: #e77832;
+  display: inline-block;
+  transform: rotate(90deg);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: fixed;
+  left: 0px;
+  top: 68px;
+  width: 150px;
+  height: 100px;
+  font-family: metropolis;
+}
+.pageTitle_hongXPanasonic {
+  font-size: 24.5px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-top: -4px;
+  font-family: metropolis;
+}
+.twoGrid73 {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 67% 27%;
+  column-gap: 6%;
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .projectTagFixed {
+    left: -85px;
+    top: 82px;
+  }
+  .twoGrid73 {
+    display: block;
+    margin-top: 30px;
+  }
+}
+.twoGrid55 {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 47% 47%;
+  column-gap: 6%;
+  row-gap: 6%;
+}
+.artworks_textTW {
+  font-size: 15px;
+  text-align: justify;
+  text-justify: distribute;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  color: #4f4f4f;
+  font-family: noto_sans_jp;
+}
+.artworks_textEN {
+  font-size: 15px;
+  text-align: justify;
+  text-justify: distribute;
+  line-height: 21px;
+  letter-spacing: 0.005em;
+  color: #4f4f4f;
+  margin: 15px 0px;
+  font-family: metropolis;
+}
+.applyHBlk {
+  position: relative;
+}
+.applyH {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.downloadBtnTextH {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.1em;
+  text-decoration-line: none;
+  margin-left: 0px;
+  color: #000;
+}
+.downloadBtnImg {
+  margin-bottom: 0px;
+  width: 21px;
+  margin: -4px 2px;
+}
+.equipBlk {
+  margin: 30px 0px;
+  color: #000000;
+}
+.equipNameTW {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.065em;
+  text-decoration-line: underline;
+}
+.equipNameEN {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.065em;
+  text-decoration-line: underline;
+}
+.equipDetailText {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+  text-justify: auto;
+  margin-top: 20px;
+}
+.panasonicLogoBlk {
+  position: relative;
+}
+.panasonicLogo {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.panasonicLogoImg {
+  max-width: 100%;
+  margin-left: 0px;
+  margin-top: 0px;
+  padding: 0px;
+  margin-right: 0px;
+}
+.arrowDown_hongXPanasonic {
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  cursor: pointer;
+  margin-left: -78px;
+}
+
+/* Canopy */
+.pageDownloadC {
+  margin-top: 30px;
+}
+.downloadBtnImgC {
+  margin-bottom: -3px;
+  margin-left: 8px;
+  width: 26px;
+}
+.downloadBtnTextC {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.1em;
+  font-family: noto_sans_jp;
+}
+.secondDownloadC {
+  margin-left: 18px;
+}

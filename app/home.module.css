@@ -1,0 +1,219 @@
+#fullpage_container {
+  background-color: #000000;
+  width: 100dvw;
+  height: 100dvh;
+  /* scrollbar-width: none; */
+}
+#fullpage_container::-webkit-scrollbar {
+  display: none;
+}
+#project_container {
+  background-color: #000000;
+  width: 85vw;
+  height: calc(100vh - 88px);
+  position: absolute;
+  top: 44px;
+  right: 44px;
+}
+#project_container div:nth-of-type(1) {
+  flex-grow: 2;
+}
+#project_container div:nth-of-type(2) {
+  flex-grow: 1;
+}
+#project_container div:nth-of-type(3) {
+  order: 1;
+}
+.grid_container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 1px;
+  padding: 1px;
+  height: 100%;
+}
+.grid_container > div {
+  background-color: #0000ff;
+  text-align: center;
+  /*padding: 20px 0;*/
+  font-size: 30px;
+}
+
+#item1 {
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+  position: relative; /*make ele can center vertically inside itself*/
+  border-left: #fff 1px solid;
+}
+#item2 {
+  grid-column: 4 / 6;
+  grid-row: 1 / 3;
+  position: relative; /*make ele can center vertically inside itself*/
+  border-top: #fff 1px solid;
+}
+#item3 {
+  position: relative; /*make ele can center vertically inside itself*/
+  border-right: #fff 1px solid;
+}
+#item4 {
+  position: relative; /*make ele can center vertically inside itself*/
+  border-bottom: #fff 1px solid;
+}
+
+.tagName {
+  color: #ffffff;
+  font-size: 11px;
+  position: absolute;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  line-height: 11px;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  font-family: metropolis;
+}
+#pTag_1 {
+  position: absolute;
+  width: 80px;
+  left: -41px;
+  bottom: 50%;
+  transform: rotate(90deg);
+  background-color: #000;
+  z-index: 99;
+}
+#pTag_2 {
+  position: absolute;
+  width: 110px;
+  top: 0px;
+  left: calc(50% - 55px);
+  transform: translate(0, -50%);
+  background-color: #000;
+  z-index: 99;
+}
+#pTag_4 {
+  position: absolute;
+  width: 110px;
+  bottom: -10px;
+  left: calc(50% - 55px);
+  transform: translate(0, -50%);
+  background-color: #000;
+  z-index: 99;
+}
+#pTag_3 {
+  position: absolute;
+  width: 130px;
+  right: -65px;
+  bottom: 50%;
+  transform: rotate(90deg);
+  background-color: #000;
+  z-index: 99;
+}
+
+.h100 {
+  height: 100%;
+}
+.bgCoverImg {
+  height: 100%;
+  width: 100%;
+  background-position: bottom center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  line-height: 100%;
+}
+.blcCtr {
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0.06em 0.06em 0.24em #000;
+}
+.fullPName1 {
+  text-align: center;
+  text-transform: uppercase;
+  width: max-content;
+  font-size: 1.6vw;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-bottom: 10px;
+  line-height: 1.6vw;
+  font-family: metropolis;
+}
+.fullPName2 {
+  text-align: center;
+  text-transform: uppercase;
+  width: max-content;
+  font-size: 1.6vw;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-bottom: 10px;
+  line-height: 1.6vw;
+  font-family: metropolis;
+}
+.fullPName3 {
+  text-align: center;
+  text-transform: uppercase;
+  width: max-content;
+  font-size: 1.1vw;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-bottom: 10px;
+  line-height: 1vw;
+  font-family: metropolis;
+}
+.fullPName4 {
+  text-align: center;
+  text-transform: uppercase;
+  width: max-content;
+  font-size: 1.1vw;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  margin-bottom: 10px;
+  line-height: 1vw;
+  font-family: metropolis;
+}
+.fullPNameTW1 {
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin: auto;
+  font-family: noto_sans_jp;
+}
+.fullPNameTW2 {
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin: auto;
+  font-family: noto_sans_jp;
+}
+.fullPNameTW3 {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin: auto;
+  font-family: noto_sans_jp;
+}
+.fullPNameTW4 {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin: auto;
+  font-family: noto_sans_jp;
+}
+
+/* phones tablets */
+@media (max-width: 768px) {
+  #fullpage_container {
+    height: 100%;
+  }
+
+  #project_container {
+    display: none;
+  }
+  #project_container_m {
+    display: block;
+  }
+}

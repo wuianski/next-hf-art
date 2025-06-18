@@ -1,0 +1,7 @@
+.fullpage_container {
+  position: relative;
+  top: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #000;
+}

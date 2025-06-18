@@ -1,0 +1,90 @@
+.content1280 {
+  max-width: 1280px;
+  padding: 38px 32px 0px 200px;
+  width: calc(100% - 232px);
+}
+.pressTitle {
+  font-size: 24.5px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-top: -5px;
+  font-family: metropolis;
+}
+.twoGrid37_press {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: 27% 67%;
+  column-gap: 6%;
+  margin: 25px 0;
+  padding-top: 28px;
+  border-top: 1px #e77832 solid;
+}
+.pressImg {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  /* padding-bottom: 63.0952%; */ /* old site */
+  padding-bottom: 66.66%;
+}
+.pressTextBlk {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  height: 36px;
+}
+.pressTextEN span {
+  margin-right: 20%;
+  max-width: 135px;
+  display: inline-flex;
+  text-align: initial;
+  font-family: metropolis;
+}
+.pressTextYear span {
+  margin-right: 20%;
+  max-width: 114px;
+  display: inline-flex;
+  text-align: initial;
+  font-family: metropolis;
+}
+.pressTextTW span {
+  margin-right: 20%;
+  max-width: 114px;
+  display: inline-flex;
+  text-align: initial;
+  font-family: noto_sans_jp;
+}
+.pressLinkBlk {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-decoration-line: underline;
+  text-transform: capitalize;
+  position: relative;
+  top: 65%;
+}
+.pressLink {
+  margin-left: 6px;
+  margin-right: 3%;
+}
+.arrowGoTo {
+  cursor: pointer;
+}
+.arrowGoTo img {
+  margin-bottom: -4px;
+  height: 16px;
+}
+
+.downloadBtnImg {
+  margin-bottom: 0px;
+  width: 21px;
+  margin: -4px 2px;
+}
+.pressLink {
+  margin-left: 6px;
+  margin-right: 3%;
+}
