@@ -44,7 +44,7 @@
   font-family: metropolis;
 }
 .pressTextYear span {
-  margin-right: 20%;
+  margin-right: 19%;
   max-width: 114px;
   display: inline-flex;
   text-align: initial;
@@ -87,4 +87,45 @@
 .pressLink {
   margin-left: 6px;
   margin-right: 3%;
+}
+
+@media (max-width: 768px) {
+  .content1280 {
+    max-width: 1280px;
+    padding: 69px 27px 120px 26px;
+    width: calc(100% - 50px);
+  }
+  .twoGrid37_press {
+    display: block;
+  }
+  .pressTextBlk {
+    height: unset;
+  }
+  .pressTextEN span {
+    max-width: unset;
+    display: inline-block;
+    width: 78%;
+    margin-right: 4%;
+    font-size: 13px;
+    line-height: 23px;
+  }
+  .pressTextYear span {
+    display: inline-block;
+    text-align: right;
+    width: 17%;
+    margin-right: unset;
+    font-size: 13px;
+  }
+  .pressTextTW span {
+    max-width: unset;
+    display: block;
+    font-size: 16px;
+    line-height: 23px;
+  }
+  .pressLinkBlk {
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+    line-height: 23px;
+  }
 }

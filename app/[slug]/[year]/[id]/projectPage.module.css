@@ -4,6 +4,13 @@
   width: 100dvw;
   height: 100dvh;
   background-color: #000;
+  z-index: 2;
+}
+.logoHF {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  z-index: 2;
 }
 .projectTag {
   color: #e77832;
@@ -55,6 +62,17 @@
   line-height: 34px;
   letter-spacing: 0.08em;
   font-family: metropolis;
+  margin-top: 0px;
+  padding-bottom: 0px;
+}
+.fullPTitleEN_Q {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0.08em;
+  font-family: metropolis;
+  margin-top: 60px;
+  padding-bottom: 9px;
 }
 .fullPDate {
   font-size: 13px;
@@ -151,14 +169,17 @@
   color: #000;
   margin-top: -24px;
   max-width: 888px;
+  /* text-align: justify;
+  text-justify: inter-character; */
+  letter-spacing: 0.05em;
 }
 .summaryTW {
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .summaryEN {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: 28px;
 }
 .closeBlock {
@@ -247,7 +268,7 @@
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-family: metropolis;
 }
 .video_textBlock {
@@ -312,6 +333,7 @@
   position: relative;
   top: 25px;
 }
+
 .artistSec .titleBlock {
   margin-bottom: 10px;
 }
@@ -470,10 +492,111 @@
 
 /* phones tablets */
 @media (max-width: 768px) {
+  .logoHF {
+    display: none;
+  }
+  .projectTag {
+    display: none;
+  }
+  .fullPTitleTW {
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-size: 30px;
+  }
+  .fullPTitleEN {
+    font-size: 16px;
+  }
+  .fullPTitleEN_Q {
+    font-size: 30px;
+  }
+  .fullPNameTW {
+    margin-top: 80px;
+  }
+  .content_container {
+    max-width: unset;
+    padding: 60px 0px 0 45px;
+    width: calc(100% - 90px);
+    margin: 0 auto;
+  }
+  .secName {
+    margin-left: -140px;
+  }
+  .summaryEN {
+    font-size: 16px;
+  }
+  .contentBlock {
+    color: #4f4f4f;
+    font-size: 15px;
+    /* width: 74%; */
+    display: block;
+    margin-bottom: 30px;
+    max-width: 888px;
+  }
+  .contentTW {
+    width: 100%;
+    font-family: noto_sans_jp;
+    margin-top: 68px;
+  }
+  .contentEN {
+    width: 100%;
+    margin-left: 0%;
+    font-family: metropolis;
+    margin-top: 28px;
+  }
+  .video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 40px;
+    width: 100dvw;
+    margin-left: -70px;
+  }
   .vidText_m {
-    padding: 0px 27px 0px 66px;
+    padding: 0px 0px 0px 0px;
+  }
+  .thirdSec {
+    width: 100dvw;
+    margin-left: -70px;
+  }
+  .artistSec {
+    margin-left: 40px;
+    width: calc(100dvw - 130px);
+  }
+  .mt20 {
+    margin-top: 0px;
+    width: 100%;
+    float: right;
+  }
+  .secNameArtist {
+    /* margin-left: -140px; */
+    top: 55px;
+  }
+  .titleTW {
+    display: inline-block;
+    width: 100%;
+  }
+  .titleEN {
+    display: inline-block;
+    width: 100dvw;
+    padding-left: 0px !important;
+  }
+  .textBlockArtist {
+    max-width: unset;
+    display: block;
+    width: calc(100dvw - 90px);
   }
   .twoGrid55 {
+    display: block;
+  }
+  .eventSec {
+    margin-top: 30px;
+  }
+  .eventBlock {
+    margin-bottom: 30px;
+  }
+  .reviewSec {
+    margin-top: -30px;
+  }
+  .twoGrid37 {
     display: block;
   }
 }

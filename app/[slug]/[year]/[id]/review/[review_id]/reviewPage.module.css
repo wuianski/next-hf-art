@@ -54,7 +54,33 @@
 }
 .reviewPostContent p img {
   margin-bottom: 0px;
+  width: 100%;
+  object-fit: cover;
 }
 .reviewPostContent p iframe {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .reviewTag {
+    left: -80px;
+    top: 125px;
+  }
+  .content1280 {
+    max-width: 1280px;
+    padding: unset;
+    width: 100%;
+  }
+  .twoGrid28 {
+    display: inline-block;
+    margin: 0px;
+    padding: 100px 27px 0px 66px;
+    width: calc(100% - 90px);
+  }
+  .mt40 {
+    margin-top: 40px;
+  }
+  .reviewPostContent p img {
+    height: 30dvh;
+  }
 }

@@ -62,3 +62,35 @@
   text-transform: uppercase;
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  #menuButton {
+    top: 18px;
+    left: unset;
+    right: 22px;
+  }
+  #menuContainer {
+    width: 100dvw;
+    max-width: unset;
+  }
+  #menuClose {
+    cursor: pointer;
+    text-align: right;
+    position: fixed;
+    top: 18px;
+    right: 22px;
+  }
+  #logoContainer {
+    position: absolute;
+    top: -5px;
+  }
+  .navTitleS {
+    /* margin-top: 38px;
+    line-height: 40px; */
+    margin-bottom: 38px;
+  }
+  #navContainer {
+    left: 20px;
+    padding: 0px;
+  }
+}

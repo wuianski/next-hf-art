@@ -20,6 +20,11 @@ async function getAbout() {
   }
 }
 
+export const metadata = {
+  title: `About | Hong Foundation - Art`,
+  description: "About, timeline, review and info of Hong Foundation.",
+};
+
 export default async function About() {
   const about = await getAbout();
   //   console.log("About:", about);
@@ -31,6 +36,14 @@ export default async function About() {
           alt={about.cover.title}
           fill
           style={{ objectFit: "cover" }}
+          className={styles.desktop_bg}
+        />
+        <Image
+          src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${about.cover_small.filename_disk}`}
+          alt={about.cover.title}
+          fill
+          style={{ objectFit: "cover" }}
+          className={styles.mobile_bg}
         />
         <AboutTabs about={about} />
       </div>

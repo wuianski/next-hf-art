@@ -26,6 +26,11 @@ async function getProjects() {
   }
 }
 
+export const metadata = {
+  title: `Press Package | Hong Foundation - Art`,
+  description: "Press release, and press images.",
+};
+
 export default async function ProjectPage() {
   const projects = await getProjects();
   //   console.log("projects:", projects.length);

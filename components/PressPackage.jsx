@@ -26,6 +26,8 @@ export default function ProjectList({ projects }) {
                     style={{
                       objectFit: "cover",
                     }}
+                    placeholder="blur"
+                    blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${node.cover.filename_disk}?blur=100`}
                   />
                 </div>
                 <div>

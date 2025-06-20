@@ -5,3 +5,18 @@
   height: 100dvh;
   background-color: #000;
 }
+.desktop_bg {
+  display: block;
+}
+.mobile_bg {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop_bg {
+    display: none;
+  }
+  .mobile_bg {
+    display: block;
+  }
+}

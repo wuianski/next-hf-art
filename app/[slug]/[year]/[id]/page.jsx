@@ -25,6 +25,23 @@ async function getProject(year, id) {
   }
 }
 
+export async function generateMetadata({ params }) {
+  const project = await getProject((await params).year, (await params).id);
+
+  return {
+    title: `${project.title_en_us} ${project.title_zh_hant_tw.replace(
+      /<[^>]+>/g,
+      ""
+    )}  | Hong Foundation - Art`,
+    description: `${project.pages_id.title_en_us} ${
+      project.pages_id.title_zh_hant_tw
+    } - ${project.title_en_us} ${project.title_zh_hant_tw.replace(
+      /<[^>]+>/g,
+      ""
+    )}`,
+  };
+}
+
 export default async function ProjectPage({ params }) {
   const project = await getProject((await params).year, (await params).id);
   //   console.log("project:", project);

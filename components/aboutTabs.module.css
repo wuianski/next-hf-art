@@ -120,3 +120,33 @@
 .IG img {
   height: 19px;
 }
+
+@media (max-width: 768px) {
+  .aboutMenuBlock {
+    width: 100dvw;
+    height: 100dvh;
+    min-width: unset;
+    margin-top: unset;
+    position: fixed;
+  }
+  .aboutTabsRoot {
+    transform: rotate(90deg) translateY(-90%);
+    transform-origin: top left;
+    width: 100vh;
+    /* top: 150px; */
+    margin-top: 80px;
+  }
+  .tabContainer {
+    height: 80vh;
+    top: 18vh;
+    overflow: scroll;
+    color: #fff;
+    scrollbar-width: none;
+    margin-right: 5px;
+    margin-left: 50px;
+    margin-top: -100px;
+  }
+  .timelineYear {
+    width: 100%;
+  }
+}

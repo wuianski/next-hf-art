@@ -6,6 +6,12 @@
   background-color: #000;
   z-index: 2;
 }
+.logoHF {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  z-index: 2;
+}
 .projectTag {
   color: #e77832;
   display: inline-block;
@@ -120,7 +126,7 @@
   text-align: center;
   margin-left: -130px;
   font-size: 11px;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 8px;
   font-family: metropolis;
 }
@@ -258,11 +264,22 @@
   width: 2%;
   display: inline-block;
   cursor: pointer;
+  vertical-align: top;
+  margin-top: 4px;
 }
 .hyperlinkBtnImg {
   width: 16px;
 }
-
+.pagination {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-start;
+  color: #000;
+  cursor: pointer;
+  padding: 0 0 80px 200px;
+  font-family: metropolis;
+  font-size: 14px;
+}
 /* Arrow Up */
 .arrowUp {
   position: absolute;
@@ -315,16 +332,7 @@
   column-gap: 6%;
   margin-top: 40px;
 }
-@media (max-width: 768px) {
-  .projectTagFixed {
-    left: -85px;
-    top: 82px;
-  }
-  .twoGrid73 {
-    display: block;
-    margin-top: 30px;
-  }
-}
+
 .twoGrid55 {
   width: 100%;
   display: inline-grid;
@@ -448,4 +456,184 @@
 }
 .secondDownloadC {
   margin-left: 18px;
+}
+
+@media (max-width: 768px) {
+  .logoHF {
+    display: none;
+  }
+  .projectTag {
+    transform: rotate(0deg);
+    width: 100%;
+    text-align: center;
+    top: 80px;
+  }
+  .blcCtrTitle {
+    top: 160px;
+    width: 90%;
+  }
+  .fullPName_EN {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .fullPName_TW {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 8px 0;
+  }
+  .blcCtrIntro {
+    width: 90%;
+    height: 45dvh;
+    top: 380px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+  }
+  /* Hong x Panasonic */
+  .content_hongXPanasonic {
+    padding: 0;
+    margin-top: 120px;
+    width: 100%;
+    text-align: justify;
+    text-justify: distribute;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+    margin-bottom: 60px;
+  }
+  .projectTagFixed {
+    transform: rotate(0deg);
+    width: 100%;
+    text-align: center;
+    top: 80px;
+    position: absolute;
+  }
+  .pageTitle_hongXPanasonic {
+    font-size: 24px;
+    text-align: center;
+  }
+  .twoGrid73 {
+    display: block;
+    width: 90%;
+    grid-template-columns: unset;
+    column-gap: 6%;
+    margin: 30px auto;
+  }
+  .applyHBlk {
+    padding-bottom: 60px;
+  }
+  .applyH {
+    margin: 20px 0px;
+  }
+  .twoGrid55 {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: unset;
+    column-gap: 0%;
+    row-gap: 0%;
+  }
+  .panasonicLogo {
+    margin: 50px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .projectsList {
+    padding: 60px 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .aList {
+    height: 33%;
+  }
+  .aList_title,
+  .aList_aName,
+  .aList_linkBlk {
+    width: 100%;
+  }
+  .aList_titleTW {
+    font-size: 16px;
+  }
+  .aList_yearBlk {
+    display: none;
+  }
+  .aList_aNameTW {
+    margin-top: 30px;
+  }
+  .aList_yearBlk_m {
+    display: block;
+    width: 100%;
+  }
+
+  .pagination {
+    justify-content: flex-start;
+    padding: 0 0 130px 0;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .pList {
+    width: 100%;
+  }
+  .pList_year {
+    margin-left: -120px;
+    font-size: 15px;
+    letter-spacing: 0.21em;
+    font-weight: 600;
+  }
+  .pList_title {
+    width: calc(100% - 60px);
+    position: relative;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    left: 30px;
+    top: -50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .pList_titleEN_Q {
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+  }
+  .pList_titleTW {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.15em;
+  }
+  .pList_titleEN {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.1em;
+  }
+  .line {
+    display: block;
+    width: 50px;
+    border-top: 1px #e77832 solid;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: -110px;
+  }
+  .pList_aName {
+    width: calc(100% - 60px);
+    position: relative;
+    border-left: none;
+    top: -80px;
+    padding: 0px 30px;
+  }
+  .pList_aNameTW {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.2em;
+  }
+  .pList_aNameEN {
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+  }
 }

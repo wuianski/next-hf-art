@@ -27,7 +27,7 @@ export default function Logo() {
   const tagZIndex = pathname === "/" ? 1 : -1;
 
   return (
-    <>
+    <span className="logo-desktop">
       <a href="https://hongfoundation.org.tw/" target="_blank" rel="noreferrer">
         <Image
           priority
@@ -63,6 +63,6 @@ export default function Logo() {
       >
         {projectPageTagName}
       </div>
-    </>
+    </span>
   );
 }

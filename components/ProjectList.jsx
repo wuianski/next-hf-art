@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import styles from "@/app/[slug]/projects.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { Fade, Slide } from "react-awesome-reveal";
 
 export default function ProjectList({ page }) {
   //   console.log("page:", page);
@@ -33,6 +34,7 @@ export default function ProjectList({ page }) {
   let projectsList;
   if (page.kind == 1) {
     projectsList = (
+      //   <Slide cascade delay={500} duration={1000} damping={0.1} direction="up">
       <div className={styles.projectsList}>
         {paginatedProjects.map((project) => (
           <div key={project.id}>
@@ -88,9 +90,11 @@ export default function ProjectList({ page }) {
           </div>
         ))}
       </div>
+      //</Slide>
     );
   } else if (page.kind == 2) {
     projectsList = (
+      //   <Slide cascade delay={500} duration={1000} damping={0.1} direction="up">
       <div className={styles.projectsList}>
         {paginatedProjects.map((project) => (
           <div key={project.id} className={styles.aList}>
@@ -134,6 +138,7 @@ export default function ProjectList({ page }) {
           </div>
         ))}
       </div>
+      //   </Slide>
     );
   } else {
     projectsList = null;
@@ -210,10 +215,6 @@ export default function ProjectList({ page }) {
                                   }}
                                 />
 
-                                {/* <a
-                                  href={myEquipment.document.publicURL}
-                                  download="spec"
-                                > */}
                                 <a
                                   href={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${myEquipment.document.filename_disk}?download=`}
                                   target="_blank"
@@ -266,6 +267,12 @@ export default function ProjectList({ page }) {
             alt={page.cover.title}
             fill
             style={{ objectFit: "cover" }}
+            placeholder="blur"
+            blurDataURL={
+              page.slug === "canopy"
+                ? `${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover_inside.filename_disk}?blur=100`
+                : `${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover.filename_disk}?blur=100`
+            }
           />
           {/* Logo and Project Tag inside fullpage image */}
           <a
@@ -273,85 +280,85 @@ export default function ProjectList({ page }) {
             target="_blank"
             rel="noreferrer"
           >
-            <Image
-              priority
-              src="/logo_hf.svg"
-              alt="Hong Foundation Logo"
-              width={120}
-              height={210}
-              style={{
-                position: "absolute",
-                top: 14,
-                left: 0,
-                zIndex: 2,
-              }}
-            />
+            <Fade cascade delay={500} duration={500} damping={0.1} triggerOnce>
+              <Image
+                priority
+                src="/logo_hf.svg"
+                alt="Hong Foundation Logo"
+                width={120}
+                height={210}
+                className={styles.logoHF}
+              />
+            </Fade>
           </a>
-          <div className={styles.projectTag}>{page.tag_name}</div>
-
-          <div className={styles.blcCtrTitle}>
-            <p className={`${styles.txtCtr} ${styles.fullPName_EN}`}>
-              {page.menu_text_en_us}
-            </p>
-            <p className={`${styles.txtCtr} ${styles.fullPName_TW}`}>
-              {page.menu_text_zh_hant_tw}
-            </p>
-          </div>
-
-          <div className={styles.blcCtrIntro}>
-            <div className={styles.pageIntro}>
-              <p className={styles.pageIntroTW}>{page.content_zh_hant_tw}</p>
-              <p className={styles.pageIntroEN}>{page.content_en_us}</p>
+          <Fade cascade delay={500} duration={500} damping={0.5} triggerOnce>
+            <div className={styles.projectTag}>{page.tag_name}</div>
+          </Fade>
+          <Fade cascade delay={500} duration={2000} damping={0.1} triggerOnce>
+            <div className={styles.blcCtrTitle}>
+              <p className={`${styles.txtCtr} ${styles.fullPName_EN}`}>
+                {page.menu_text_en_us}
+              </p>
+              <p className={`${styles.txtCtr} ${styles.fullPName_TW}`}>
+                {page.menu_text_zh_hant_tw}
+              </p>
             </div>
-            {page.slug == "canopy" && (
-              <div className={styles.pageDownloadC}>
-                <span>
-                  {/* <a href={page.planimetric_map.publicURL} download="平面圖"> */}
-                  <a
-                    href={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.planimetric_map.filename_disk}?download=`}
-                    target="_blank"
-                    rel="noreferrer"
-                    download="平面圖"
-                  >
-                    <span className={styles.downloadBtnTextC}>平面圖</span>
-                    <span
-                      className={styles.downloadBtn}
-                      role="button"
-                      tabIndex="0"
-                    >
-                      <img
-                        className={styles.downloadBtnImgC}
-                        src="/download.svg"
-                        alt="download button"
-                      />
-                    </span>
-                  </a>
-                </span>
-                <span className={styles.secondDownloadC}>
-                  {/* <a href={page.apply_for.publicURL} download="申請辦法"> */}
-                  <a
-                    href={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.apply_for.filename_disk}?download=`}
-                    target="_blank"
-                    rel="noreferrer"
-                    download="申請辦法"
-                  >
-                    <span className={styles.downloadBtnTextC}>申請辦法</span>
-                    <span
-                      className={styles.downloadBtn}
-                      role="button"
-                      tabIndex="0"
-                    >
-                      <img
-                        className={styles.downloadBtnImgC}
-                        src="/download.svg"
-                        alt="download button"
-                      />
-                    </span>
-                  </a>
-                </span>
+
+            <div className={styles.blcCtrIntro}>
+              <div className={styles.pageIntro}>
+                <p className={styles.pageIntroTW}>{page.content_zh_hant_tw}</p>
+                <p className={styles.pageIntroEN}>{page.content_en_us}</p>
               </div>
-            )}
-          </div>
+              {page.slug == "canopy" && (
+                <div className={styles.pageDownloadC}>
+                  <span>
+                    {/* <a href={page.planimetric_map.publicURL} download="平面圖"> */}
+                    <a
+                      href={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.planimetric_map.filename_disk}?download=`}
+                      target="_blank"
+                      rel="noreferrer"
+                      download="平面圖"
+                    >
+                      <span className={styles.downloadBtnTextC}>平面圖</span>
+                      <span
+                        className={styles.downloadBtn}
+                        role="button"
+                        tabIndex="0"
+                      >
+                        <img
+                          className={styles.downloadBtnImgC}
+                          src="/download.svg"
+                          alt="download button"
+                        />
+                      </span>
+                    </a>
+                  </span>
+                  <span className={styles.secondDownloadC}>
+                    {/* <a href={page.apply_for.publicURL} download="申請辦法"> */}
+                    <a
+                      href={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.apply_for.filename_disk}?download=`}
+                      target="_blank"
+                      rel="noreferrer"
+                      download="申請辦法"
+                    >
+                      <span className={styles.downloadBtnTextC}>申請辦法</span>
+                      <span
+                        className={styles.downloadBtn}
+                        role="button"
+                        tabIndex="0"
+                      >
+                        <img
+                          className={styles.downloadBtnImgC}
+                          src="/download.svg"
+                          alt="download button"
+                        />
+                      </span>
+                    </a>
+                  </span>
+                </div>
+              )}
+            </div>
+          </Fade>
 
           <div
             className={styles.pdTB80}
@@ -371,20 +378,11 @@ export default function ProjectList({ page }) {
         </div>
       )}
       {/* Projects List */}
+      {/* <Slide cascade delay={500} duration={1000} damping={0.1} direction="up"> */}
       <div>{projectsList}</div>
+      {/* </Slide> */}
       {totalPages > 1 && (
-        <div
-          style={{
-            display: "flex",
-            gap: 18,
-            justifyContent: "left",
-            color: "#000",
-            cursor: "pointer",
-            padding: " 0 0 80px 200px",
-            fontFamily: "metropolis",
-            fontSize: "14px",
-          }}
-        >
+        <div className={styles.pagination}>
           {Array.from({ length: totalPages }, (_, idx) => (
             <div
               key={idx + 1}

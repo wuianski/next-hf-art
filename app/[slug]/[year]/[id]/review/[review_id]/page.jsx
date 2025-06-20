@@ -23,6 +23,15 @@ async function getReview(review_id) {
   }
 }
 
+export async function generateMetadata({ params }) {
+  const review = await getReview((await params).review_id);
+
+  return {
+    title: `Review | Hong Foundation - Art`,
+    description: `Review - ${review.title.replace(/<[^>]+>/g, "")}`,
+  };
+}
+
 export default async function ReviewPage({ params }) {
   const review = await getReview((await params).review_id);
   // console.log("review:", review);
@@ -33,7 +42,7 @@ export default async function ReviewPage({ params }) {
       <div className={styles.reviewTag}>review</div>
       <div className={styles.content1280}>
         <div className={styles.twoGrid28}>
-          <div className={`${styles.reviewPostSideInfo} ${styles.mt40}`}>
+          <div className={`${styles.reviewPostSideInfo}`}>
             <div style={{ fontFamily: "metropolis" }}>
               {review.date ? review.date.split("T")[0] : ""}
             </div>

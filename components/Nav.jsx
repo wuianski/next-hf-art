@@ -14,11 +14,6 @@ export default function Nav({ pages }) {
   const closeNav = () => {
     setMenuOpen((open) => !open);
   };
-  //   const [checked, setChecked] = useState(false);
-
-  //   const handleChange = () => {
-  //     setChecked((prev) => !prev);
-  //   };
   return (
     <nav>
       <div

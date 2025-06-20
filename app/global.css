@@ -1,9 +1,11 @@
+html {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
 body {
-  /* padding: 0; */
   margin: 0;
-  /* background-color: #000; */
   width: 100dvw;
-  /* height: 100dvh; */
   overflow-x: hidden;
   color: #333;
 }
@@ -21,4 +23,21 @@ p {
 /* Force english info in about page to use font metropolis */
 .info_en {
   font-family: metropolis;
+}
+
+@media (max-width: 768px) {
+  .logo-desktop {
+    display: none !important;
+  }
+  .slick-dots {
+    bottom: 22px !important;
+  }
+  .slick-dots li button::before {
+    color: #fff !important;
+    opacity: 1 !important;
+  }
+  .slick-dots li.slick-active button::before {
+    color: #e77832 !important;
+    opacity: 1 !important;
+  }
 }

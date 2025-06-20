@@ -22,6 +22,15 @@ async function getProject(year, id) {
   }
 }
 
+export async function generateMetadata({ params }) {
+  const project = await getProject((await params).year, (await params).id);
+
+  return {
+    title: `Press images | Hong Foundation - Art`,
+    description: `Press images - ${project.pages_id.title_en_us} ${project.year} ${project.title_en_us}`,
+  };
+}
+
 export default async function ProjectPage({ params }) {
   const project = await getProject((await params).year, (await params).id);
   //   console.log("project:", project);

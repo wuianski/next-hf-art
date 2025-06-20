@@ -69,16 +69,19 @@ export default function ProjectContent({ project }) {
                   >
                     <div className={styles.pressSingleImg_m}>
                       <Image
-                        src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${image.filename_disk}`}
+                        src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${image.directus_files_id.filename_disk}`}
                         alt="press cover image"
                         width={300}
                         height={300}
+                        className={styles.pressSingleImg_d}
                         style={{
                           objectFit: "cover",
                         }}
+                        placeholder="blur"
+                        blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${image.directus_files_id.filename_disk}?blur=100`}
                       />
                     </div>
-                    <div>
+                    <div className={styles.pressImgContent_m}>
                       <div
                         className={styles.pressImgContentTxt_tw}
                         dangerouslySetInnerHTML={{
@@ -134,6 +137,8 @@ export default function ProjectContent({ project }) {
                         style={{
                           objectFit: "cover",
                         }}
+                        placeholder="blur"
+                        blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${image.directus_files_id.filename_disk}?blur=100`}
                       />
                     </div>
                   </div>

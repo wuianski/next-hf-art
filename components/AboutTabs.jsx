@@ -60,6 +60,11 @@ const StyledTabs = styled((props) => (
     width: "100%",
     backgroundColor: "#e77832",
   },
+  "& .MuiTabs-root": {
+    transform: "rotate(90deg) translateY(-100%)",
+    transformOrigin: `top left`,
+    width: "100dvh",
+  },
 });
 
 const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
@@ -121,6 +126,7 @@ export default function AboutTabs({ about }) {
             textColor="primary"
             indicatorColor="secondary"
             // variant="fullWidth"
+            className={styles.aboutTabsRoot}
           >
             <StyledTab label="ABOUT" {...a11yProps(0)} />
             <StyledTab label="TIMELINE" {...a11yProps(1)} />

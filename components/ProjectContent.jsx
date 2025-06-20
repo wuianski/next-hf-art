@@ -10,6 +10,7 @@ import React from "react";
 import Slider from "react-slick";
 import NavigateNext from "@mui/icons-material/NavigateNext";
 import NavigateBefore from "@mui/icons-material/NavigateBefore";
+import { Fade } from "react-awesome-reveal";
 
 /* Slick Carousel Settings */
 function SampleNextArrow(props) {
@@ -81,7 +82,6 @@ export default function ProjectContent({ project }) {
   };
 
   // var projectPageSlug, if project.pages_id.id is 1, then the value is "the-question", if it is 2, then the value is "extension", if it is 5, then the value is "tung-chung-prize", else is null
-
   let projectPageSlug = null;
   let projectPageTagName = null;
   if (project.pages_id.id === 1) {
@@ -98,6 +98,11 @@ export default function ProjectContent({ project }) {
     projectPageTagName = null;
   }
 
+  //sort projcect.reviews by date in descending order
+  project.reviews.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
   return (
     <>
       {/* Zero Section - Fullscreen Image */}
@@ -107,6 +112,8 @@ export default function ProjectContent({ project }) {
           alt={project.cover.title}
           fill
           style={{ objectFit: "cover" }}
+          placeholder="blur"
+          blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${project.cover.filename_disk}?blur=100`}
         />
         {/* Logo and Project Tag inside fullpage image */}
         <a
@@ -114,58 +121,60 @@ export default function ProjectContent({ project }) {
           target="_blank"
           rel="noreferrer"
         >
-          <Image
-            priority
-            src="/logo_hf.svg"
-            alt="Hong Foundation Logo"
-            width={120}
-            height={210}
-            style={{
-              position: "absolute",
-              top: 14,
-              left: 0,
-              zIndex: 2,
-            }}
-          />
+          <Fade cascade delay={500} duration={500} damping={0.1} triggerOnce>
+            <Image
+              priority
+              src="/logo_hf.svg"
+              alt="Hong Foundation Logo"
+              width={120}
+              height={210}
+              className={styles.logoHF}
+            />
+          </Fade>
         </a>
-        <div className={styles.projectTag}>{projectPageTagName}</div>
-        <div className={styles.blcCtr}>
-          <div className={`${styles.txtCtr} ${styles.fullPYear}`}>
-            {project.year}
-          </div>
+        <Fade cascade delay={500} duration={500} damping={0.5} triggerOnce>
+          <div className={styles.projectTag}>{projectPageTagName}</div>
+        </Fade>
+        <Fade cascade delay={500} duration={2000} damping={0.1} triggerOnce>
+          <div className={styles.blcCtr}>
+            <div className={`${styles.txtCtr} ${styles.fullPYear}`}>
+              {project.year}
+            </div>
 
-          <div
-            className={`${styles.txtCtr} ${styles.fullPTitleTW}`}
-            dangerouslySetInnerHTML={{ __html: project.title_zh_hant_tw }}
-            style={{ display: project.pages_id.id == 1 ? "none" : "block" }}
-          />
-          <div
-            className={`${styles.txtCtr} ${styles.fullPTitleEN}`}
-            style={{
-              fontSize: project.pages_id.id == 1 ? "40px" : "25px",
-              marginTop: project.pages_id.id == 1 ? "60px" : "0px",
-              paddingBottom: project.pages_id.id == 1 ? "9px" : "0px",
-            }}
-          >
-            {project.title_en_us}
+            <div
+              className={`${styles.txtCtr} ${styles.fullPTitleTW}`}
+              dangerouslySetInnerHTML={{ __html: project.title_zh_hant_tw }}
+              style={{ display: project.pages_id.id == 1 ? "none" : "block" }}
+            />
+            <div
+              className={`${styles.txtCtr}  ${
+                project.pages_id.id == 1
+                  ? styles.fullPTitleEN_Q
+                  : styles.fullPTitleEN
+              } `}
+            >
+              {project.title_en_us}
+            </div>
+            <div className={`${styles.txtCtr} ${styles.fullPDate}`}>
+              {project.begin_exhibition && (
+                <span>{project.begin_exhibition}</span>
+              )}
+              {project.begin_exhibition && (
+                <span> - {project.end_exhibition}</span>
+              )}
+            </div>
+            <div
+              className={`${styles.txtCtr} ${styles.fullPNameTW}`}
+              dangerouslySetInnerHTML={{
+                __html: project.artist_name_zh_hant_tw,
+              }}
+            />
+            <div
+              className={`${styles.txtCtr} ${styles.fullPNameEN}`}
+              dangerouslySetInnerHTML={{ __html: project.artist_name_en_us }}
+            />
           </div>
-          <div className={`${styles.txtCtr} ${styles.fullPDate}`}>
-            {project.begin_exhibition && (
-              <span>{project.begin_exhibition}</span>
-            )}
-            {project.begin_exhibition && (
-              <span> - {project.end_exhibition}</span>
-            )}
-          </div>
-          <div
-            className={`${styles.txtCtr} ${styles.fullPNameTW}`}
-            dangerouslySetInnerHTML={{ __html: project.artist_name_zh_hant_tw }}
-          />
-          <div
-            className={`${styles.txtCtr} ${styles.fullPNameEN}`}
-            dangerouslySetInnerHTML={{ __html: project.artist_name_en_us }}
-          />
-        </div>
+        </Fade>
         <div
           className={styles.pdTB80}
           role="button"

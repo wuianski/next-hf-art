@@ -19,6 +19,15 @@ async function getAboutReview() {
   }
 }
 
+export async function generateMetadata() {
+  const aboutReview = await getAboutReview();
+
+  return {
+    title: `Review | Hong Foundation - Art`,
+    description: `Review - ${aboutReview.title.replace(/<[^>]+>/g, "")}`,
+  };
+}
+
 export default async function AboutReview() {
   const aboutReview = await getAboutReview();
   //   console.log("aboutReview:", aboutReview);
@@ -28,7 +37,7 @@ export default async function AboutReview() {
       <div className={styles.reviewTag}>review</div>
       <div className={styles.content1280}>
         <div className={styles.twoGrid28}>
-          <div className={`${styles.reviewPostSideInfo} ${styles.mt40}`}>
+          <div className={`${styles.reviewPostSideInfo} `}>
             <div style={{ fontFamily: "metropolis" }}>
               {aboutReview.date ? aboutReview.date.split("T")[0] : ""}
             </div>
