@@ -19,8 +19,19 @@ export default function ProjectList({ page }) {
       title_en_us: project.title_en_us,
       title_zh_hant_tw: project.title_zh_hant_tw,
       main_video_url: project.main_video_url,
+      begin_exhibition: project.begin_exhibition,
+      end_exhibition: project.end_exhibition,
     }))
-    .sort((a, b) => b.year - a.year);
+    .sort((a, b) => {
+      if (b.year !== a.year) {
+        return b.year - a.year;
+      }
+      // If year is the same, sort by begin_exhibition (descending)
+      if (b.begin_exhibition && a.begin_exhibition) {
+        return new Date(b.begin_exhibition) - new Date(a.begin_exhibition);
+      }
+      return 0;
+    });
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -46,7 +57,8 @@ export default function ProjectList({ page }) {
                 <div className={styles.pList_year}>{project.year}</div>
                 <div className={styles.pList_title}>
                   {page.slug == "tung-chung-prize" ||
-                  page.slug == "extension" ? (
+                  page.slug == "extension" ||
+                  page.slug == "special-partnership" ? (
                     <>
                       <div
                         className={styles.pList_titleTW}
@@ -399,7 +411,7 @@ export default function ProjectList({ page }) {
         </div>
       )}
       {/* Arrow Up */}
-      <div className={styles.mt120}>
+      <div className={styles.mt30}>
         <div
           className={`${styles.arrowUp} `}
           style={{ paddingBottom: "20px" }}

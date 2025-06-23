@@ -33,7 +33,13 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${page.title_en_us} ${page.title_zh_hant_tw} | Hong Foundation - Art `,
+    title: `${page.title_en_us.replace(
+      /<[^>]+>/g,
+      ""
+    )} ${page.title_zh_hant_tw.replace(
+      /<[^>]+>/g,
+      ""
+    )}  | Hong Foundation - Art`,
     description: `${page.content_en_us} ${page.content_zh_hant_tw}`,
   };
 }

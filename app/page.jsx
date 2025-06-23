@@ -22,8 +22,8 @@ async function getPages() {
             //   },
             // },
             {
-              sort: {
-                _neq: 5,
+              id: {
+                _nin: [3, 4],
               },
             },
           ],

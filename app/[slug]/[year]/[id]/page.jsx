@@ -29,7 +29,10 @@ export async function generateMetadata({ params }) {
   const project = await getProject((await params).year, (await params).id);
 
   return {
-    title: `${project.title_en_us} ${project.title_zh_hant_tw.replace(
+    title: `${project.title_en_us.replace(
+      /<[^>]+>/g,
+      ""
+    )} ${project.title_zh_hant_tw.replace(
       /<[^>]+>/g,
       ""
     )}  | Hong Foundation - Art`,

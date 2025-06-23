@@ -458,6 +458,10 @@
   margin-left: 18px;
 }
 
+.mt30 {
+  margin-top: 30px;
+}
+
 @media (max-width: 768px) {
   .logoHF {
     display: none;

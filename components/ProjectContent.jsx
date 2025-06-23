@@ -93,6 +93,9 @@ export default function ProjectContent({ project }) {
   } else if (project.pages_id.id === 5) {
     projectPageSlug = "tung-chung-prize";
     projectPageTagName = "prize";
+  } else if (project.pages_id.id === 6) {
+    projectPageSlug = "special-partnership";
+    projectPageTagName = "collaboration";
   } else {
     projectPageSlug = null;
     projectPageTagName = null;
@@ -152,9 +155,9 @@ export default function ProjectContent({ project }) {
                   ? styles.fullPTitleEN_Q
                   : styles.fullPTitleEN
               } `}
-            >
-              {project.title_en_us}
-            </div>
+              dangerouslySetInnerHTML={{ __html: project.title_en_us }}
+            />
+
             <div className={`${styles.txtCtr} ${styles.fullPDate}`}>
               {project.begin_exhibition && (
                 <span>{project.begin_exhibition}</span>
