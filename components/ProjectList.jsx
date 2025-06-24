@@ -257,7 +257,7 @@ export default function ProjectList({ page }) {
                   <div className={styles.panasonicLogoBlk}>
                     <div className={styles.panasonicLogo}>
                       <img
-                        src="/Panasonic.jpg"
+                        src="/panasonic.jpg"
                         alt="Panasonic logo"
                         className={styles.panasonicLogoImg}
                       />
