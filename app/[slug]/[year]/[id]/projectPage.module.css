@@ -490,6 +490,16 @@
   cursor: pointer;
 }
 
+.mt60 {
+  margin-top: 60px;
+}
+.mt45 {
+  margin-top: 45px;
+}
+.pb20 {
+  padding-bottom: 20px;
+}
+
 /* phones tablets */
 @media (max-width: 768px) {
   .logoHF {
@@ -598,5 +608,12 @@
   }
   .twoGrid37 {
     display: block;
+  }
+
+  .arrowUp {
+    left: calc(50% + 0px);
+  }
+  .arrowDown {
+    left: calc(50% + 6px);
   }
 }

@@ -22,6 +22,7 @@ export default function ProjectList({ projects }) {
                     className={styles.pressCoverImg}
                     src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${node.cover.filename_disk}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                     alt="press cover image"
                     style={{
                       objectFit: "cover",

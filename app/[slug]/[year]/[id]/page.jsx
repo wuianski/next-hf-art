@@ -7,6 +7,7 @@ import styles from "./projectPage.module.css";
 
 /* COMPONENTS */
 import ProjectContent from "@/components/ProjectContent";
+import Footer from "@/components/Footer";
 
 async function getProject(year, id) {
   try {
@@ -52,6 +53,7 @@ export default async function ProjectPage({ params }) {
   return (
     <>
       <ProjectContent project={project} />
+      <Footer />
     </>
   );
 }

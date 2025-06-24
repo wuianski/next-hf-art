@@ -278,6 +278,7 @@ export default function ProjectList({ page }) {
             }
             alt={page.cover.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
             style={{ objectFit: "cover" }}
             placeholder="blur"
             blurDataURL={
@@ -411,9 +412,9 @@ export default function ProjectList({ page }) {
         </div>
       )}
       {/* Arrow Up */}
-      <div className={styles.mt30}>
+      <div className={styles.mt45}>
         <div
-          className={`${styles.arrowUp} `}
+          className={`${styles.arrowUp} ${styles.mt45} ${styles.pb20}`}
           style={{ paddingBottom: "20px" }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           role="button"

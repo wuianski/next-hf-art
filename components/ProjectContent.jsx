@@ -114,6 +114,7 @@ export default function ProjectContent({ project }) {
           src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${project.cover.filename_disk}`}
           alt={project.cover.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           style={{ objectFit: "cover" }}
           placeholder="blur"
           blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${project.cover.filename_disk}?blur=100`}
@@ -344,6 +345,8 @@ export default function ProjectContent({ project }) {
                     style={{
                       objectFit: "contain",
                     }}
+                    placeholder="blur"
+                    blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${image.directus_files_id.filename_disk}?blur=100`}
                   />
                 </div>
               ))}
@@ -446,6 +449,8 @@ export default function ProjectContent({ project }) {
                                 style={{ objectFit: "cover" }}
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 90vw"
                                 quality={100}
+                                placeholder="blur"
+                                blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${event.image.filename_disk}?blur=100`}
                               />
                             ) : null}
                           </div>
@@ -543,7 +548,7 @@ export default function ProjectContent({ project }) {
           )}
         </div>
         {/* Arrow Up */}
-        <div className={styles.mt60}>
+        <div className={styles.mt45}>
           <div
             className={`${styles.arrowUp} ${styles.mt45} ${styles.pb20}`}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

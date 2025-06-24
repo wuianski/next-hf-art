@@ -8,6 +8,7 @@ import { readItems } from "@directus/sdk";
 /* COMPONENTS */
 import Nav from "@/components/Nav";
 import Logo from "@/components/Logo";
+
 /* MUI */
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 /* SLICK CAROUSEL */

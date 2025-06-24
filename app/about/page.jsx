@@ -35,15 +35,21 @@ export default async function About() {
           src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${about.cover.filename_disk}`}
           alt={about.cover.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           style={{ objectFit: "cover" }}
           className={styles.desktop_bg}
+          placeholder="blur"
+          blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${about.cover.filename_disk}?blur=100`}
         />
         <Image
           src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${about.cover_small.filename_disk}`}
           alt={about.cover.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           style={{ objectFit: "cover" }}
           className={styles.mobile_bg}
+          placeholder="blur"
+          blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${about.cover.filename_disk}?blur=100`}
         />
         <AboutTabs about={about} />
       </div>

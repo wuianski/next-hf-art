@@ -9,6 +9,7 @@ import styles from "./projects.module.css";
 
 /* COMPONENTS */
 import ProjectList from "@/components/ProjectList";
+import Footer from "@/components/Footer";
 
 async function getPage(slug) {
   try {
@@ -53,6 +54,7 @@ export default async function DynamicPage({ params }) {
   return (
     <>
       <ProjectList page={page} />
+      <Footer />
     </>
   );
 }

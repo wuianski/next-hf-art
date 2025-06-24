@@ -276,7 +276,7 @@
   justify-content: flex-start;
   color: #000;
   cursor: pointer;
-  padding: 0 0 80px 200px;
+  padding: 0 0 30px 200px;
   font-family: metropolis;
   font-size: 14px;
 }
@@ -286,6 +286,7 @@
   left: calc(50% + 14px);
   transform: translate(-50%, -50%);
   cursor: pointer;
+  /* padding-bottom: 120px; */
 }
 
 /* Hong x Panasonic */
@@ -461,6 +462,15 @@
 .mt30 {
   margin-top: 30px;
 }
+.mt60 {
+  margin-top: 60px;
+}
+.mt45 {
+  margin-top: 45px;
+}
+.pb20 {
+  padding-bottom: 20px;
+}
 
 @media (max-width: 768px) {
   .logoHF {
@@ -574,7 +584,7 @@
 
   .pagination {
     justify-content: flex-start;
-    padding: 0 0 130px 0;
+    padding: 0 0 30px 0;
     width: 90%;
     margin: 0 auto;
   }
@@ -639,5 +649,12 @@
     font-size: 12px;
     line-height: 24px;
     letter-spacing: 0.1em;
+  }
+
+  .arrowUp {
+    left: calc(50% + 0px);
+  }
+  .arrowDown {
+    left: calc(50% + 6px);
   }
 }

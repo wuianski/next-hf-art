@@ -89,7 +89,7 @@ export default function FrontPage({ pages }) {
                       src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover.filename_disk}`}
                       alt={page.cover.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 90vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
                       quality={100}
                       style={{
                         objectFit: "cover",
