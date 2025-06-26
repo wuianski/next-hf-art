@@ -12,22 +12,13 @@ async function getPages() {
   try {
     return await directus.request(
       readItems("pages", {
-        sort: ["sort"],
         fields: ["*", "*.*", { file: ["*", "*.*"] }],
         filter: {
-          _and: [
-            // {
-            //   status: {
-            //     _eq: "published",
-            //   },
-            // },
-            {
-              id: {
-                _nin: [3, 4],
-              },
-            },
-          ],
+          sort: {
+            _in: [1, 2, 3, 4], // Exclude the pages with sort 5 and 6
+          },
         },
+        sort: ["sort"],
       })
     );
   } catch (error) {

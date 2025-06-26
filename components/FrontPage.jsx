@@ -18,13 +18,14 @@ var settings = {
 };
 
 export default function FrontPage({ pages }) {
+  //   console.log("pages:", pages);
   return (
     <>
       <div id={styles.fullpage_container}>
         <div id={styles.project_container}>
           <div className={styles.grid_container}>
             {pages.map((page, idx) => (
-              <div key={page.id} id={styles[`item${page.sort}`]}>
+              <div key={page.sort} id={styles[`item${page.sort}`]}>
                 <div className={styles.tagName}>
                   <div id={styles[`pTag_${page.sort}`]}>{page.tag_name}</div>
                 </div>
@@ -42,7 +43,7 @@ export default function FrontPage({ pages }) {
                         src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover.filename_disk}`}
                         alt={page.cover.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                         quality={100}
                         style={{
                           objectFit: "cover",
