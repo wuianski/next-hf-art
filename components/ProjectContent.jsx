@@ -95,7 +95,7 @@ export default function ProjectContent({ project }) {
     projectPageTagName = "prize";
   } else if (project.pages_id.id === 6) {
     projectPageSlug = "collaborations";
-    projectPageTagName = "collaboration";
+    projectPageTagName = "collab";
   } else {
     projectPageSlug = null;
     projectPageTagName = null;

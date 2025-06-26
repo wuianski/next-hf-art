@@ -77,27 +77,27 @@
 }
 #pTag_1 {
   position: absolute;
-  width: 80px;
-  left: -41px;
-  bottom: 50%;
-  transform: rotate(90deg);
+  width: 130px;
+  left: -65px;
+  bottom: calc(50% - 65px);
+  transform: rotate(90deg) translate(-50%, 0);
   background-color: #000;
   z-index: 99;
 }
 #pTag_2 {
   position: absolute;
-  width: 110px;
+  width: 130px;
   top: 0px;
-  left: calc(50% - 55px);
+  left: calc(50% - 65px);
   transform: translate(0, -50%);
   background-color: #000;
   z-index: 99;
 }
 #pTag_4 {
   position: absolute;
-  width: 110px;
+  width: 130px;
   bottom: -10px;
-  left: calc(50% - 55px);
+  left: calc(50% - 65px);
   transform: translate(0, -50%);
   background-color: #000;
   z-index: 99;
@@ -106,8 +106,8 @@
   position: absolute;
   width: 130px;
   right: -65px;
-  bottom: 50%;
-  transform: rotate(90deg);
+  bottom: calc(50% - 70px);
+  transform: rotate(90deg) translate(-50%, 0);
   background-color: #000;
   z-index: 99;
 }
