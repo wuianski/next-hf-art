@@ -94,6 +94,7 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
 );
 
 export default function AboutTabs({ about }) {
+  //   console.log("about:", about);
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -243,11 +244,7 @@ export default function AboutTabs({ about }) {
                 role="button"
                 tabIndex="0"
               >
-                <a
-                  href="https://www.facebook.com/HongFoundation/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={about.fb} target="_blank" rel="noreferrer">
                   <img src="/fb.svg" alt="link to FB" />
                 </a>
               </span>
@@ -256,11 +253,7 @@ export default function AboutTabs({ about }) {
                 role="button"
                 tabIndex="0"
               >
-                <a
-                  href="https://www.youtube.com/channel/UCoU7nZDpNvSncKinwbJ0T7A/featured"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={about.yt} target="_blank" rel="noreferrer">
                   <img src="/yt.svg" alt="link to YT" />
                 </a>
               </span>
@@ -269,11 +262,7 @@ export default function AboutTabs({ about }) {
                 role="button"
                 tabIndex="0"
               >
-                <a
-                  href="https://www.instagram.com/hong.foundation/?fbclid=IwAR0fPaBRnxrwJyiNaWzf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={about.ig} target="_blank" rel="noreferrer">
                   <img src="/ig.svg" alt="link to IG" />
                 </a>
               </span>

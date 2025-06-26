@@ -58,7 +58,7 @@ export default function ProjectList({ page }) {
                 <div className={styles.pList_title}>
                   {page.slug == "tung-chung-prize" ||
                   page.slug == "extension" ||
-                  page.slug == "special-partnership" ? (
+                  page.slug == "collaborations" ? (
                     <>
                       <div
                         className={styles.pList_titleTW}
@@ -111,21 +111,35 @@ export default function ProjectList({ page }) {
         {paginatedProjects.map((project) => (
           <div key={project.id} className={styles.aList}>
             <div className={styles.aList_title}>
-              <div className={styles.aList_titleTW}>
-                {project.title_zh_hant_tw}
-              </div>
-              <div className={styles.aList_titleEN}>{project.title_en_us}</div>
+              <div
+                className={styles.aList_titleTW}
+                dangerouslySetInnerHTML={{
+                  __html: project.title_zh_hant_tw,
+                }}
+              ></div>
+              <div
+                className={styles.aList_titleEN}
+                dangerouslySetInnerHTML={{
+                  __html: project.title_en_us,
+                }}
+              ></div>
             </div>
             <div className={styles.aList_yearBlk}>
               <div className={styles.aList_year}>{project.year}</div>
             </div>
             <div className={styles.aList_aName}>
-              <div className={styles.aList_aNameTW}>
-                {project.artist_name_zh_hant_tw}
-              </div>
-              <div className={styles.aList_aNameEN}>
-                {project.artist_name_en_us}
-              </div>
+              <div
+                className={styles.aList_aNameTW}
+                dangerouslySetInnerHTML={{
+                  __html: project.artist_name_zh_hant_tw,
+                }}
+              ></div>
+              <div
+                className={styles.aList_aNameEN}
+                dangerouslySetInnerHTML={{
+                  __html: project.artist_name_en_us,
+                }}
+              ></div>
             </div>
             <div className={styles.aList_linkBlk}>
               {project.main_video_url && (

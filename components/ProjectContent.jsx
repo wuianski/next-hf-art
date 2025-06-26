@@ -94,7 +94,7 @@ export default function ProjectContent({ project }) {
     projectPageSlug = "tung-chung-prize";
     projectPageTagName = "prize";
   } else if (project.pages_id.id === 6) {
-    projectPageSlug = "special-partnership";
+    projectPageSlug = "collaborations";
     projectPageTagName = "collaboration";
   } else {
     projectPageSlug = null;

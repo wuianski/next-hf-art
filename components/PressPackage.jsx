@@ -51,7 +51,7 @@ export default function ProjectList({ projects }) {
                   <div className={styles.pressLinkBlk}>
                     {node.file_zip && (
                       <a
-                        href={node.file_zip.publicURL}
+                        href={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${node.file_zip.filename_disk}?download=`}
                         target="_blank"
                         rel="noreferrer"
                         download
@@ -72,7 +72,7 @@ export default function ProjectList({ projects }) {
                     )}
                     {node.file_pdf && (
                       <a
-                        href={node.file_pdf.publicURL}
+                        href={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${node.file_pdf.filename_disk}?download=`}
                         target="_blank"
                         rel="noreferrer"
                       >
