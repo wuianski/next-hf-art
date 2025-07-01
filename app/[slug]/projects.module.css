@@ -103,6 +103,7 @@
 /* pList */
 .projectsList {
   padding: 38px 32px 38px 200px;
+  min-height: 85dvh;
 }
 .pList {
   display: block;
@@ -559,6 +560,7 @@
     padding: 60px 0;
     width: 90%;
     margin: 0 auto;
+    min-height: max-content;
   }
   .aList {
     height: 33%;

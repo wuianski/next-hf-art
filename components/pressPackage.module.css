@@ -88,7 +88,16 @@
   margin-left: 6px;
   margin-right: 3%;
 }
-
+.pagination {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-start;
+  color: #000;
+  cursor: pointer;
+  padding: 30px 0 30px 200px;
+  font-family: metropolis;
+  font-size: 14px;
+}
 @media (max-width: 768px) {
   .content1280 {
     max-width: 1280px;

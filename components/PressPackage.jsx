@@ -8,13 +8,20 @@ import Image from "next/image";
 
 export default function ProjectList({ projects }) {
   //   console.log("projects:", projects);
+  const [currentPage, setCurrentPage] = useState(1);
 
+  const PAGE_SIZE = 6;
+  const totalPages = Math.ceil(projects.length / PAGE_SIZE);
+  const paginatedProjects = projects.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE
+  );
   return (
     <>
       <div className={styles.content1280}>
         <div className={styles.pressTitle}>press package</div>
         <div>
-          {projects.map((node) => (
+          {paginatedProjects.map((node) => (
             <div key={node.id}>
               <div className={styles.twoGrid37_press}>
                 <div className={styles.pressImg}>
@@ -108,6 +115,26 @@ export default function ProjectList({ projects }) {
           ))}
         </div>
       </div>
+
+      {totalPages > 1 && (
+        <div className={styles.pagination}>
+          {Array.from({ length: totalPages }, (_, idx) => (
+            <div
+              key={idx + 1}
+              onClick={() => {
+                setCurrentPage(idx + 1);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              style={{
+                fontWeight: currentPage === idx + 1 ? "bold" : "normal",
+                color: currentPage === idx + 1 ? "#e77832" : "#000",
+              }}
+            >
+              {idx + 1}
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }

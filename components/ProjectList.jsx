@@ -35,7 +35,14 @@ export default function ProjectList({ page }) {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const PAGE_SIZE = page.kind == 1 ? 3 : page.kind == 2 ? 6 : 5;
+  const PAGE_SIZE =
+    page.kind == 1
+      ? 3
+      : page.kind == 2 && page.id == 3
+      ? 6
+      : page.kind == 2 && page.id == 4
+      ? 6
+      : 6;
   const totalPages = Math.ceil(projects.length / PAGE_SIZE);
   const paginatedProjects = projects.slice(
     (currentPage - 1) * PAGE_SIZE,
@@ -413,10 +420,18 @@ export default function ProjectList({ page }) {
           {Array.from({ length: totalPages }, (_, idx) => (
             <div
               key={idx + 1}
-              onClick={() => setCurrentPage(idx + 1)}
+              onClick={() => {
+                setCurrentPage(idx + 1);
+                window.scrollTo({
+                  top:
+                    page.id === 4
+                      ? window.innerHeight + 150
+                      : window.innerHeight,
+                  behavior: "smooth",
+                });
+              }}
               style={{
                 fontWeight: currentPage === idx + 1 ? "bold" : "normal",
-                // textDecoration: currentPage === idx + 1 ? "underline" : "none",
                 color: currentPage === idx + 1 ? "#e77832" : "#000",
               }}
             >
