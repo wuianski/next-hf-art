@@ -425,7 +425,7 @@ export default function ProjectList({ page }) {
                 window.scrollTo({
                   top:
                     page.id === 4
-                      ? window.innerHeight + 150
+                      ? window.innerHeight + 80
                       : window.innerHeight,
                   behavior: "smooth",
                 });
