@@ -63,19 +63,40 @@ export default function Nav({ pages }) {
                 />
               </a>
             </div>
+
             <div id={styles.navContainer}>
-              {pages.map((page) => (
-                <div key={page.id} className={styles.navTitle}>
-                  <Link href={`/${page.slug}`} onClick={closeNav}>
-                    <div className={styles.navTitleEN}>
-                      {page.menu_text_en_us}
-                    </div>
-                    <div className={styles.navTitleTW}>
-                      {page.menu_text_zh_hant_tw}
-                    </div>
-                  </Link>
-                </div>
-              ))}
+              <div className={styles.navTitle}></div>
+              <div className={styles.navTitle}>
+                <Link href="/tung-chung-prize" onClick={closeNav}>
+                  <div className={styles.navTitleEN}>TUNG CHUNG PRIZE</div>
+                  <div className={styles.navTitleTW}>銅鐘藝術賞</div>
+                </Link>
+              </div>
+              <div className={styles.navTitle}>
+                <Link href="/the-question" onClick={closeNav}>
+                  <div className={styles.navTitleEN}>The Question Project</div>
+                  <div className={styles.navTitleTW}>問問題計畫</div>
+                </Link>
+              </div>
+              <div className={styles.navTitle}>
+                <Link href="/extension" onClick={closeNav}>
+                  <div className={styles.navTitleEN}>Extension Project</div>
+                  <div className={styles.navTitleTW}>認養計畫</div>
+                </Link>
+              </div>
+              <div className={styles.navTitle}>
+                <Link href="/canopy" onClick={closeNav}>
+                  <div className={styles.navTitleEN}>Canopy Project</div>
+                  <div className={styles.navTitleTW}>雨棚計畫</div>
+                </Link>
+              </div>
+              <div className={styles.navTitle}>
+                <Link href="/collaborations" onClick={closeNav}>
+                  <div className={styles.navTitleEN}>collaborations</div>
+                  <div className={styles.navTitleTW}>特別合作</div>
+                </Link>
+              </div>
+
               <div className={styles.navTitleS}>
                 <Link href="/" onClick={closeNav}>
                   <div className={styles.navTitleEN}>Home</div>

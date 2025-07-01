@@ -34,17 +34,13 @@ export default function ProjectList({ projects }) {
                 <div>
                   <div className={styles.pressTextBlk}>
                     <span className={styles.pressTextEN}>
-                      {node.pages_id.id === 1 && (
-                        <span>THE QUESTION PROJECT</span>
-                      )}
-                      {node.pages_id.id === 5 && <span>TUNG CHUNG PRIZE</span>}
+                      <span>{node.pages_id.menu_text_en_us}</span>
                     </span>
                     <span className={styles.pressTextYear}>
                       <span>{node.year}</span>
                     </span>
                     <span className={styles.pressTextTW}>
-                      {node.pages_id.id === 1 && <span>問問題計畫</span>}
-                      {node.pages_id.id === 5 && <span>銅鐘藝術賞</span>}
+                      <span> {node.pages_id.menu_text_zh_hant_tw}</span>
                     </span>
                   </div>
 

@@ -14,7 +14,7 @@ async function getProjects() {
       readItems("projects", {
         fields: ["*", "*.*", "*.*.*", { file: ["*", "*.*", "*.*.*"] }],
         filter: {
-          pages_id: { _in: [1, 5] },
+          pages_id: { _in: [1, 2, 5, 6] },
           status: { _eq: "published" },
         },
         sort: ["-year"],
