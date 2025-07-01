@@ -14,6 +14,7 @@ async function getReview(review_id) {
         fields: ["*", "*.*", "*.*.*", { file: ["*", "*.*", "*.*.*"] }],
         filter: {
           id: { _eq: review_id },
+          status: { _eq: "published" },
         },
       })
     );

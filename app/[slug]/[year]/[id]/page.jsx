@@ -17,6 +17,7 @@ async function getProject(year, id) {
         filter: {
           year: { _eq: year },
           id: { _eq: id },
+          status: { _eq: "published" },
         },
       })
     );

@@ -18,9 +18,16 @@ async function getPage(slug) {
         fields: ["*", "*.*", "*.*.*", { file: ["*", "*.*", "*.*.*"] }],
         filter: {
           slug: { _eq: slug },
+          status: { _eq: "published" },
         },
       })
     );
+    // Filter projects array to only include published projects
+    if (page && page[0] && Array.isArray(page[0].projects)) {
+      page[0].projects = page[0].projects.filter(
+        (project) => project.status === "published"
+      );
+    }
     return page[0];
   } catch (error) {
     notFound();
@@ -50,7 +57,7 @@ export default async function DynamicPage({ params }) {
   if (!page || !page.projects) {
     notFound();
   }
-
+  //   console.log("page:", page);
   return (
     <>
       <ProjectList page={page} />
