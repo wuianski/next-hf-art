@@ -74,7 +74,7 @@ export default function Nav({ pages }) {
               </div>
               <div className={styles.navTitle}>
                 <Link href="/the-question" onClick={closeNav}>
-                  <div className={styles.navTitleEN}>The Question Project</div>
+                  <div className={styles.navTitleEN}>Question Project</div>
                   <div className={styles.navTitleTW}>問問題計畫</div>
                 </Link>
               </div>
