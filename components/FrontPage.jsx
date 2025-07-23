@@ -18,7 +18,7 @@ var settings = {
 };
 
 export default function FrontPage({ pages }) {
-  //   console.log("pages:", pages);
+  // console.log("pages:", pages);
   return (
     <>
       <div id={styles.fullpage_container}>
@@ -37,20 +37,32 @@ export default function FrontPage({ pages }) {
                         position: "absolute",
                         width: "100%",
                         height: "100%",
+                        backgroundColor: page.cover ? "#000" : "#000",
                       }}
                     >
-                      <Image
-                        src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover.filename_disk}`}
-                        alt={page.cover.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-                        quality={100}
-                        style={{
-                          objectFit: "cover",
-                        }}
-                        placeholder="blur"
-                        blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover.filename_disk}?blur=100`}
-                      />
+                      {page.cover ? (
+                        <Image
+                          src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover.filename_disk}`}
+                          alt={page.cover.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                          quality={100}
+                          style={{
+                            objectFit: "cover",
+                          }}
+                          placeholder="blur"
+                          blurDataURL={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover.filename_disk}?blur=100`}
+                        />
+                      ) : (
+                        <div
+                          style={{
+                            position: "relative",
+                            width: "100%",
+                            height: "100%",
+                            backgroundColor: "#000",
+                          }}
+                        />
+                      )}
                     </div>
 
                     <div className={styles.blcCtr}>
@@ -83,19 +95,30 @@ export default function FrontPage({ pages }) {
                       position: "relative",
                       width: "100dvw",
                       height: "100dvh",
-                      backgroundColor: "#000",
+                      backgroundColor: page.cover ? "#000" : "#000",
                     }}
                   >
-                    <Image
-                      src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover.filename_disk}`}
-                      alt={page.cover.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
-                      quality={100}
-                      style={{
-                        objectFit: "cover",
-                      }}
-                    />
+                    {page.cover ? (
+                      <Image
+                        src={`${process.env.DIRECTUS_IMAGE_DOMAIN_DO}${page.cover.filename_disk}`}
+                        alt={page.cover.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
+                        quality={100}
+                        style={{
+                          objectFit: "cover",
+                        }}
+                      />
+                    ) : (
+                      <div
+                        style={{
+                          position: "relative",
+                          width: "100dvw",
+                          height: "100dvh",
+                          backgroundColor: "#000",
+                        }}
+                      />
+                    )}
                     <Fade cascade delay={500} duration={2000} damping={0.5}>
                       <div className={styles.blcCtr}>
                         <p className={styles.tagName_m}>{page.tag_name}</p>
