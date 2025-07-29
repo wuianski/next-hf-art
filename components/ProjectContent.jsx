@@ -457,12 +457,18 @@ export default function ProjectContent({ project }) {
                           <div
                             className={`${styles.titleBlock} ${styles.mb20}`}
                           >
-                            <div className={styles.titleTW}>
-                              {event.title_zh_hant_tw}
-                            </div>
-                            <div className={styles.titleEN}>
-                              {event.title_en_us}
-                            </div>
+                            <div
+                              className={styles.titleTW}
+                              dangerouslySetInnerHTML={{
+                                __html: event.title_zh_hant_tw,
+                              }}
+                            />
+                            <div
+                              className={styles.titleEN}
+                              dangerouslySetInnerHTML={{
+                                __html: event.title_en_us,
+                              }}
+                            />
                           </div>
                           <div className={styles.openBlock}>
                             <div
