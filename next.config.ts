@@ -12,7 +12,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "dataprojects.hongfoundation.org.tw",
+        // hostname: "dataprojects.hongfoundation.org.tw",
+        hostname: "dataprojects.hf-dev.com",
         port: "",
         pathname: "/assets/**",
       },
